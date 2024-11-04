@@ -93,7 +93,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task AddWidget(BlazorGridStackWidgetOptions options)
         {
-            return GridJs.AddWidget(options);
+            return GridJs?.AddWidget(options) ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task AddWidget(string id)
         {
-            return GridJs.AddWidget(id);
+            return GridJs?.AddWidget(id) ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task BatchUpdate(bool? flag = null)
         {
-            return GridJs.BatchUpdate(flag);
+            return GridJs?.BatchUpdate(flag) ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task Compact()
         {
-            return GridJs.Compact();
+            return GridJs?.Compact() ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task CellHeight(int val, bool? update = null)
         {
-            return GridJs.CellHeight(val, update);
+            return GridJs?.CellHeight(val, update) ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task<int> CellWidth()
         {
-            return GridJs.CellWidth();
+            return (Task<int>)(GridJs?.CellWidth() ?? Task.CompletedTask);
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task Column(int column, string? layout = null)
         {
-            return GridJs.Column(column, layout);
+            return GridJs?.Column(column, layout) ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task Destroy(bool? removeDOM = null)
         {
-            return GridJs.Destroy(removeDOM);
+            return GridJs?.Destroy(removeDOM) ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task Disable()
         {
-            return GridJs.Disable();
+            return GridJs?.Disable() ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -183,7 +183,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task Enable()
         {
-            return GridJs.Enable();
+            return GridJs?.Enable() ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task EnableMove(bool doEnable)
         {
-            return GridJs.EnableMove(doEnable);
+            return GridJs?.EnableMove(doEnable) ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task EnableResize(bool doEnable)
         {
-            return GridJs.EnableResize(doEnable);
+            return GridJs?.EnableResize(doEnable) ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -212,7 +212,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task<bool> GetFloat()
         {
-            return GridJs.GetFloat();
+            return (Task<bool>)(GridJs?.GetFloat() ?? Task.CompletedTask);
         }
 
         /// <summary>
@@ -222,7 +222,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task SetFloat(bool? val = null)
         {
-            return GridJs.SetFloat(val);
+            return GridJs?.SetFloat(val) ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -231,7 +231,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task<int> GetCellHeight()
         {
-            return GridJs.GetCellHeight();
+            return (Task<int>)(GridJs?.GetCellHeight() ?? Task.CompletedTask);
         }
 
         /// <summary>
@@ -243,7 +243,7 @@ namespace BlazorGridStack
         /// <returns>an object with properties x and y i.e. the column and row in the grid.</returns>
         public Task<BlazorGridCoordinates> GetCellFromPixel(int top, int left, bool? useOffset = null)
         {
-            return GridJs.GetCellFromPixel(top, left, useOffset);
+            return (Task<BlazorGridCoordinates>)(GridJs?.GetCellFromPixel(top, left, useOffset) ?? Task.CompletedTask);
         }
 
         /// <summary>
@@ -252,7 +252,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task<int> GetColumn()
         {
-            return GridJs.GetColumn();
+            return (Task<int>)(GridJs?.GetColumn() ?? Task.CompletedTask);
         }
 
         /// <summary>
@@ -261,7 +261,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task<IEnumerable<BlazorGridStackWidgetData>> GetGridItems()
         {
-            return GridJs.GetGridItems();
+            return (Task<IEnumerable<BlazorGridStackWidgetData>>)(GridJs?.GetGridItems() ?? Task.CompletedTask);
         }
 
         /// <summary>
@@ -270,7 +270,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task<int> GetMargin()
         {
-            return GridJs.GetMargin();
+            return (Task<int>)(GridJs?.GetMargin() ?? Task.CompletedTask);
         }
 
         /// <summary>
@@ -283,7 +283,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task<bool> IsAreaEmpty(int x, int y, int width, int height)
         {
-            return GridJs.IsAreaEmpty(x, y, width, height);
+            return (Task<bool>)(GridJs?.IsAreaEmpty(x, y, width, height) ?? Task.CompletedTask);
         }
 
         /// <summary>
@@ -294,7 +294,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task Load(IEnumerable<BlazorGridStackWidgetOptions> layout, bool? addAndRemove = null)
         {
-            return GridJs.Load(layout, addAndRemove);
+            return (Task<bool>)(GridJs?.Load(layout, addAndRemove) ?? Task.CompletedTask);
         }
 
         /// <summary>
@@ -304,7 +304,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task MakeWidget(string id)
         {
-            return GridJs.MakeWidget(id);
+            return GridJs?.MakeWidget(id) ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -314,7 +314,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task Margin(int value)
         {
-            return GridJs.Margin(value);
+            return GridJs?.Margin(value) ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -326,7 +326,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task Margin(string value)
         {
-            return GridJs.Margin(value);
+            return GridJs?.Margin(value) ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -337,7 +337,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task Movable(string id, bool val)
         {
-            return GridJs.Movable(id, val);
+            return GridJs?.Movable(id, val) ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -349,7 +349,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task RemoveWidget(string id, bool? removeDOM = null, bool? triggerEvent = true)
         {
-            return GridJs.RemoveWidget(id, removeDOM, triggerEvent);
+            return GridJs?.RemoveWidget(id, removeDOM, triggerEvent) ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -359,7 +359,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task RemoveAll(bool? removeDOM = null)
         {
-            return GridJs.RemoveAll(removeDOM);
+            return GridJs?.RemoveAll(removeDOM) ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -370,7 +370,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task Resizable(string id, bool val)
         {
-            return GridJs.Resizable(id, val);
+            return GridJs?.Resizable(id, val) ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -380,7 +380,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task Save(bool? saveContent)
         {
-            return GridJs.Save(saveContent);
+            return GridJs?.Save(saveContent) ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -390,7 +390,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task SetAnimation(bool doAnimate)
         {
-            return GridJs.SetAnimation(doAnimate);
+            return GridJs?.SetAnimation(doAnimate) ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -400,7 +400,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task SetStatic(bool staticValue)
         {
-            return GridJs.SetStatic(staticValue);
+            return GridJs?.SetStatic(staticValue) ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -411,7 +411,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task Update(string id, BlazorGridStackWidgetOptions opts)
         {
-            return GridJs.Update(id, opts);
+            return GridJs?.Update(id, opts) ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -425,7 +425,7 @@ namespace BlazorGridStack
         /// <returns></returns>
         public Task<bool> WillItFit(int x, int y, int width, int height, bool autoPosition)
         {
-            return GridJs.WillItFit(x, y, width, height, autoPosition);
+            return (Task<bool>)(GridJs?.WillItFit(x, y, width, height, autoPosition) ?? Task.CompletedTask);
         }
     }
 }
