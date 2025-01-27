@@ -43,7 +43,7 @@ namespace BlazorGridStack
         /// <summary>
         /// Called when items are being removed from the grid
         /// </summary>
-        [Parameter] public EventCallback OnRemoved { get; set; }
+        [Parameter] public EventCallback<BlazorGridStackWidgetListEventArgs> OnRemoved { get; set; }
 
         /// <summary>
         /// called while grid item is being resized, for each new row/column value (not every pixel)
